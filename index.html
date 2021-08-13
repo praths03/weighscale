@@ -29,7 +29,7 @@
             margin: 0;
             padding: 0;
             background-color: #dde1e7;
-
+            font-family: 'Open Sans';
         }
 
         #container {
@@ -81,6 +81,7 @@
             background: white;
             border-radius: 10px;
             color: black;
+            font-size: 50px;
             /* box-shadow: 10px 10px 20px #666666,
                 -10px -10px 20px #ffffff */
             font-family: 'Open Sans', sans-serif;
@@ -88,8 +89,9 @@
 
         #weight p {
             position: absolute;
-            left: 60%;
-            top: -40px;
+            left: 50%;
+            top: -50px;
+            font-family: 'Open Sans', sans-serif;
         }
 
 
@@ -102,15 +104,15 @@
             text-align: center;
             text-decoration: none;
             font-size: 20px;
-            font-size: 16px;
             border-radius: 25px;
-            height: 40px;
-            top: 90%;
+            height: 50px;
             right: 5%;
             line-height: 0px;
-            width: 30%;
+            width: 40%;
             cursor: pointer;
             background-color: white;
+            font-family: 'Open Sans', sans-serif;
+            top: 88%;
             /* box-shadow: 10px 10px 20px #666666,
                 -10px -10px 20px #ffffff; */
         }
@@ -119,18 +121,19 @@
             position: absolute;
             background: none;
             color: black;
-            background: white;
+            background-color: white;
             text-align: center;
-            width: 30%;
+            width: 40%;
             font-size: 20px;
-            line-height: 40px;
-            height: 40px;
-            top: 90%;
+            line-height: 50px;
+            height: auto;
+            top: 88%;
             left: 5%;
             border-radius: 25px;
             /* box-shadow: 10px 10px 20px #666666,
                 -10px -10px 20px #ffffff */
             cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
         }
 
         select {
@@ -193,7 +196,8 @@
             margin: auto;
             bottom: 35%;
             background: white;
-            border-radius: 10px;
+            border-radius: 25px;
+
         }
 
         #circle2 {
@@ -220,9 +224,10 @@
             right: 0px;
             margin: auto;
             font-size: 40px;
-            color: #777;
             padding-top: 20px;
             font-family: 'Open Sans', sans-serif;
+            font: bold;
+            color: black;
         }
 
         @keyframes fade {
@@ -250,32 +255,80 @@
             -webkit-animation: fade ease-in-out 0.5s;
         }
 
-        .place{
+        .place b {
             position: absolute;
             top: 5%;
             text-align: center;
             width: 100%;
+            right: 50%;
+            right: 0%;
+            font-family: 'Open Sans', sans-serif;
         }
 
-        .your{
+        .your b {
             position: absolute;
             top: 60%;
             text-align: center;
             width: 100%;
+            right: 50%;
+            right: 0%;
+            font-family: 'Open Sans', sans-serif;
         }
 
-        .object{
+        .object b {
             position: absolute;
             top: 115%;
             text-align: center;
             width: 100%;
+            right: 50%;
+            right: 0%;
+            font-family: 'Open Sans', sans-serif;
         }
 
-        .here{
+        .here b {
             position: absolute;
             top: 170%;
             text-align: center;
             width: 100%;
+            right: 50%;
+            right: 0%;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            z-index: 3;
+            top: 96%;
+            position: absolute;
+            left: 28%;
+        }
+
+        .dot1 {
+            height: 15px;
+            width: 15px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            z-index: 3;
+            top: 96%;
+            left: 18%;
+            position: absolute;
+        }
+
+        .dot2 {
+            height: 15px;
+            width: 15px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            z-index: 3;
+            top: 96%;
+            left: 23%;
+            position: absolute;
         }
     </style>
 
@@ -300,20 +353,20 @@
 
         <div id="circle">
             <div id="message">
-                <div class="place"> PLACE</div> <br>
-                <div class="your">YOUR</div> <br>
-                <div class="object">OBJECT</div> <br>
-                <div class="here">HERE</div>
+                <div class="place"><b> PLACE</b> </div> <br>
+                <div class="your"><b>YOUR</b></div> <br>
+                <div class="object"><b>OBJECT</b></div> <br>
+                <div class="here"><b>HERE</b></div>
             </div>
             <div id="circle2"></div>
             <div id="warning">Multi-Touch Weighing<br>(usually less accurate)</div>
         </div>
         <!-- <div id="footer"> -->
         <div id="weight">
-            <p>0.00</p>
+            <p> <b>0.00</b></p>
         </div>
         <div class="weight1">
-            <p> Weight (gms) </p>
+            <p> <b>WEIGHT</b> <br> <b>(GMS)</b> </p>
         </div>
         <!-- <div id="controls"> -->
         <!-- <select id="sense">
@@ -323,11 +376,15 @@
         </select> -->
 
         <div id="tare">
-            Tare
+            <b>Tare</b>
         </div>
         <div id="reset">
-            <button class="reset">Reset</button>
+            <button class="reset"> <b>Reset</b></button>
         </div>
+        <span class="dot"></span>
+        <span class="dot1"></span>
+        <span class="dot2"></span>
+        <span class="dot"></span>
     </div>
     </div>
     </div>
@@ -409,3 +466,4 @@
                     force += touches[k]
                 }
         }
+    </script>
